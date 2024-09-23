@@ -1,1 +1,1 @@
-№ Ya mobile mediation (AdMob test Native)
+# Ya mobile mediation (AdMob test Native)
