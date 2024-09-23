@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ShapeCorner">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/shape_radius</item>
+    </style>
+
+    <style name="AppText" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+    <style name="AppText.Title" parent="AppText">
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="AppText.Caption" parent="AppText">
+        <item name="android:textSize">@dimen/_10ssp</item>//14sp
+    </style>
+    <style name="AppText.Caption.Mini" parent="AppText">
+        <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+</resources>

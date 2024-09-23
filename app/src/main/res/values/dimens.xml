@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_card_inner">10dp</dimen>
+    <dimen name="shape_radius">20dp</dimen>
+    <dimen name="margin_between">10dp</dimen>
+    <dimen name="margin_between_small">6dp</dimen>
+    <dimen name="margin_edge_card_p_h">10dp</dimen>
+
+</resources>
