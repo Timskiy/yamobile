@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-import com.yandex.mobile.ads.common.MobileAds;
+import com.google.android.gms.ads.MobileAds;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,13 +21,13 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnDebug = findViewById(R.id.btnDebug);
         btnDebug.setOnClickListener(v -> {
-            MobileAds.showDebugPanel(this);
+            MobileAds.openDebugMenu(this, "ca-app-pub-3940256099942544/2247696110");
         });
     }
 
     private void initializeMobileAdsSdk(){
         new Thread(() -> {
-            MobileAds.initialize(this, () -> {});
+            MobileAds.initialize(this, initializationStatus -> {});
             runOnUiThread(() -> {
                 adNative();
             });
@@ -36,9 +36,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void adNative(){
         containerNative = findViewById(R.id.ad_view_container);
-        String adMob = "demo-native-admob";
-        String yandex = "demo-native-app-yandex";
+        String adMob = "ca-app-pub-3940256099942544/2247696110";
         adNativeManager = new AdNativeManager(this, containerNative, adMob);
         adNativeManager.loadNativeAd();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (adNativeManager != null){
+            adNativeManager.destroy();
+        }
+        super.onDestroy();
     }
 }
